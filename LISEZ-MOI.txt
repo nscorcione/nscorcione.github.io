@@ -1,0 +1,137 @@
+===========================================================
+  PORTFOLIO DE NOA SCORCIONE : MODE D'EMPLOI
+===========================================================
+
+CE QU'IL Y A DANS LE DOSSIER
+---------------------------------------------------------
+  index.html          tout le texte du site
+  style.css           couleurs et mise en page
+  script.js           rôles qui défilent + apparition au scroll
+  cv.pdf              le CV lié par les boutons "CV"
+  js/mnist.js         démo 1 : dessin + prédiction du chiffre
+  js/mnist-weights.js la matrice W (785 x 10) apprise en Python
+  js/inpaint.js       démo 2 : restauration par gradient conjugué
+  js/paf-image.js     la photo de la Patrouille de France (1280 x 720)
+  js/bpm-core.js      démo 3 : calcul du BPM (FFT, passe-bande, seuillage)
+  js/bpm.js           démo 3 : caméra, cadre guide, graphiques
+  images/             memoji.png (carte "en bref") et favicon.png (icône d'onglet)
+
+
+1. VOIR LE SITE
+---------------------------------------------------------
+Double-clique sur index.html. Tout marche hors ligne, y compris
+les deux démos. Seules les polices viennent de Google Fonts ;
+sans internet, une police système prend le relais.
+
+
+2. MODIFIER LE TEXTE
+---------------------------------------------------------
+Dans index.html, Ctrl+F "MODIFIE" pour les endroits principaux.
+On change le texte entre les balises, jamais les balises.
+  <span class="grad">mot</span>  affiche "mot" en dégradé violet
+Les rôles qui défilent sous le nom sont en haut de script.js.
+
+
+Ordre de la page : accueil, parcours, compétences, projets, contact.
+Les projets sont des blocs <details class="project"> : la ligne du
+haut (<summary>) reste visible, le reste s'ouvre au clic. Un seul
+projet est ouvert à la fois (attribut name="projets"). Pour changer
+le titre, le résumé ou les étiquettes d'un projet, modifie son
+<summary> dans index.html.
+
+
+3. METTRE UNE PHOTO
+---------------------------------------------------------
+La carte "en bref" affiche ton Memoji (images/memoji.png), qui sert
+aussi d'icône d'onglet (images/favicon.png, 64 x 64).
+Pour une vraie photo : dépose-la dans images/ (carrée de préférence),
+puis dans index.html remplace src="images/memoji.png" par le nom
+de ta photo.
+
+
+4. LES DÉMOS : CE QUI SE PASSE VRAIMENT
+---------------------------------------------------------
+Rien n'est envoyé à un serveur. Le site n'a d'ailleurs pas de
+serveur de calcul : tout est du JavaScript exécuté par le
+navigateur du visiteur.
+
+Démo MNIST
+  - W a été calculé une fois avec le code de test.py
+    (W = pinv(E~) @ B sur les 60 000 images d'entraînement),
+    puis exporté dans js/mnist-weights.js.
+  - Précision mesurée sur les 10 000 images de test : 86,03 %.
+  - Le prétraitement reprend pretraiter() : recadrage, boîte 20x20,
+    centrage par centre de masse dans 28x28.
+  - Les scores passent dans un softmax de température 10,4
+    (réglée sur le jeu de test) pour afficher des probabilités.
+  Pour régénérer W : relancer l'entraînement et réécrire le fichier
+  (même format : float32 en base64, 785 lignes x 10 colonnes).
+
+Démo restauration
+  - Traduction de image_restauration_couleur_opti() et grad_conj().
+  - Lm X + X Ln est calculé comme un laplacien 5 points (c'est
+    exactement le même produit, sans construire les matrices).
+  - Vérifié contre la version Python sur le masque d'exemple :
+    écart moyen inférieur à 1 niveau de gris sur la zone restaurée.
+  - Les images importées sont réduites à 1280 px de côté maximum
+    pour que le calcul reste fluide.
+
+
+Démo pouls (Ma312)
+  - On fait la moyenne du canal vert sur une zone du front à chaque
+    image (mêmes proportions que la V2 du BE), puis on applique les
+    réglages du BE, sans rien à régler sur la page :
+      seuillage spectral tau = 6 -> filtre_pb 60-180 BPM
+      -> autocorrélation.
+  - Un seul ajout, invisible : la dérive lente de la lumière est
+    retirée avant le seuillage. Sans ça, FFT() divise le signal par
+    le niveau de vert (~150) avant d'enlever la moyenne, le pouls
+    passe sous tau = 6 et tout est effacé (testé : aucun résultat).
+    Les réglages sont dans PARAMS, en haut de la partie calcul de
+    js/bpm.js.
+  - L'autocorrélation compte le décalage en images entières : à
+    30 images/s le résultat avance par paliers (71 pour un pouls de
+    72 dans le test avec une fausse caméra).
+  - Pas de détecteur de Haar dans le navigateur (OpenCV.js pèse
+    près de 10 Mo) : un cadre guide indique où placer le visage.
+  - La caméra ne fonctionne que sur une page en https (Netlify,
+    GitHub Pages) ou ouverte en local. Elle se coupe à la fin.
+  - Vérifié avec une fausse caméra qui pulse à 72 BPM : 72 trouvé.
+
+
+Démo détection de spam (projet IA, IA_part_I.py)
+  - js/ia-data.js : modèles et données exportés depuis Python (566 Ko).
+    js/ia-core.js : KNN, Naive Bayes et LDA.
+    js/ia.js      : l'interface (SMS tapé, verdicts, mots colorés).
+  - SMS : même vocabulaire (CountVectorizer) et même découpage
+    (random_state = 42). Vérifié contre les classes Python :
+    Naive Bayes 90,67 % (biais 1e-15), LDA 98,48 %, KNN k=3 p=2 93,81 %.
+  - Attention : dans IA_part_I.py, le biais de la variance de Naive
+    Bayes n'est pas ajouté (le commentaire parle de +1e-3, le rapport
+    de 1e-15). Sans biais, le code donne 86,6 % (il répond toujours
+    "ham"). Avec 1e-3, il monte à 98,65 % : c'est un réglage de la démo.
+  - LDA : la matrice 8 713 x 8 713 est trop lourde pour le navigateur.
+    Pour deux classes, la règle du rapport se réduit exactement à
+    w.x + b avec w = Σ⁻¹(μ1 − μ0), calculé une fois en Python
+    (identité de Woodbury). Mêmes prédictions que la classe LDA.
+  - Les parties Pima (diabète) et cancer du sein ne sont pas sur le
+    site : seule l'analyse des SMS est présentée.
+
+
+5. METTRE LE SITE EN LIGNE (gratuit)
+---------------------------------------------------------
+Netlify Drop : https://app.netlify.com/drop, glisse le dossier
+"mon-site" entier sur la page. Pour mettre à jour, on re-glisse.
+
+GitHub Pages : crée un dépôt ton-pseudo.github.io, envoie les
+fichiers, le site est en ligne à https://ton-pseudo.github.io
+
+
+6. AVANT DE PARTAGER LE LIEN
+---------------------------------------------------------
+  [ ] ajouter LinkedIn / GitHub dans la section Contact
+      (lignes en commentaire, prêtes à décommenter)
+  [ ] remplacer le monogramme par une photo si tu veux
+  [ ] vérifier cv.pdf : sa phrase d'accroche parle encore
+      de recherche de stage
+  [ ] ouvrir le site sur ton téléphone et tester les deux démos

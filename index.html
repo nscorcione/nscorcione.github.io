@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  PORTFOLIO DE NOA SCORCIONE
+  ============================================================
+  - Le TEXTE se change dans ce fichier (Ctrl+F "MODIFIE").
+  - Les COULEURS sont en haut de "style.css".
+  - Les rôles qui défilent sont en haut de "script.js".
+  - Les démos des projets sont dans le dossier "js/" :
+      mnist.js, mnist-weights.js     chiffres manuscrits
+      inpaint.js, paf-image.js       restauration d'image
+      bpm.js, bpm-core.js            pouls par webcam
+      ia.js, ia-core.js, ia-data.js  détection de spams
+  Rien n'est envoyé à un serveur : tout tourne dans le navigateur.
+  ============================================================
+-->
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noa Scorcione · Élève ingénieur IPSA</title>
+  <meta name="description" content="Noa Scorcione, élève ingénieur à l'IPSA Toulouse (télécoms et systèmes embarqués). Parcours, expériences et projets à tester directement dans le navigateur.">
+  <meta name="theme-color" content="#09080f">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="glow glow-1" aria-hidden="true"></div>
+<div class="glow glow-2" aria-hidden="true"></div>
+
+
+<!-- ====================  NAVIGATION  ==================== -->
+<header class="nav">
+  <div class="container nav-inner">
+    <a href="#accueil" class="logo">NS<span>.</span></a>
+    <nav class="nav-links" aria-label="Navigation principale">
+      <a href="#parcours">Parcours</a>
+      <a href="#competences">Compétences</a>
+      <a href="#projets">Projets</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </nav>
+  </div>
+</header>
+
+
+<main>
+
+<!-- ====================  ACCUEIL  ==================== -->
+<section id="accueil" class="hero">
+  <div class="container hero-grid">
+
+    <div class="hero-text">
+      <!-- MODIFIE : la petite étiquette du haut -->
+      <p class="pill"><span class="dot"></span> En semestre d'échange à l'UTM, Malaisie</p>
+
+      <h1>Noa<br><span class="grad">Scorcione</span></h1>
+
+      <p class="typing-line">
+        <span id="typing">élève ingénieur à l'IPSA</span><span class="caret" aria-hidden="true">|</span>
+      </p>
+
+      <!-- MODIFIE : la présentation -->
+      <p class="hero-bio">
+        Je suis en deuxième année de cycle ingénieur à l'IPSA Toulouse, en
+        télécommunications et systèmes embarqués, et je passe ce semestre en
+        échange à l'UTM, en Malaisie. Vous trouverez ici mon parcours et
+        quelques projets de cours que vous pouvez tester directement sur le site.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#projets">Voir les projets</a>
+        <a class="btn btn-ghost" href="cv.pdf" target="_blank" rel="noopener">Mon CV (PDF)</a>
+      </div>
+    </div>
+
+    <!-- Carte "en bref". Pour mettre une vraie photo à la place du Memoji :
+         dépose-la dans images/ et change src="images/memoji.png" ci-dessous. -->
+    <aside class="id-card" aria-label="En bref">
+      <div class="id-head">
+        <img class="id-photo" src="images/memoji.png" alt="Memoji de Noa Scorcione" width="72" height="72">
+        <div>
+          <p class="id-name">Noa Scorcione</p>
+          <p class="id-sub">Toulouse · Johor Bahru</p>
+        </div>
+      </div>
+      <dl class="id-list">
+        <div><dt>École</dt><dd>IPSA Toulouse, cycle ingénieur</dd></div>
+        <div><dt>Spécialité</dt><dd>Télécoms et systèmes embarqués</dd></div>
+        <div><dt>Cette année</dt><dd>Échange à l'UTM, en Malaisie</dd></div>
+        <div><dt>Anglais</dt><dd>TOEIC 870 / 990</dd></div>
+        <div><dt>Loisirs</dt><dd>Pilote d'avion léger, football</dd></div>
+      </dl>
+    </aside>
+
+  </div>
+</section>
+
+
+<!-- ====================  PARCOURS  ==================== -->
+<section id="parcours" class="section">
+  <div class="container">
+    <p class="section-label">Parcours</p>
+    <h2 class="section-title">Expériences et <span class="grad">formation</span></h2>
+    <p class="section-intro">
+      Plusieurs jobs d'été depuis le lycée, puis un premier stage technique cet
+      été chez Air Services.
+    </p>
+
+    <div class="timeline-grid">
+
+      <div class="timeline-col">
+        <h3 class="col-title">Expériences</h3>
+        <ol class="timeline">
+
+          <li class="tl-item">
+            <p class="tl-date">Juil. – août 2026</p>
+            <h4>Air Services <span class="tl-place">Fronton (31)</span></h4>
+            <p class="tl-role">Stage technicien</p>
+            <p>
+              J'ai regroupé la base de données des pièces et automatisé une partie
+              du travail avec des macros VBA. J'ai aussi réorganisé le OneDrive de
+              l'entreprise et suivi des demandes clients.
+            </p>
+          </li>
+
+          <li class="tl-item">
+            <p class="tl-date">Juil. – août 2025</p>
+            <h4>Luxor Lighting <span class="tl-place">Angoulême (16)</span></h4>
+            <p class="tl-role">Ouvrier saisonnier</p>
+            <p>
+              Assemblage de composants d'éclairage pour l'automobile, et contrôle
+              visuel et mécanique des pièces.
+            </p>
+          </li>
+
+          <li class="tl-item">
+            <p class="tl-date">Juil. – août 2024</p>
+            <h4>Bristol Myers Squibb <span class="tl-place">Boudry, Suisse</span></h4>
+            <p class="tl-role">Employé saisonnier</p>
+            <p>
+              Numérisation et archivage de documents, inventaire des pièces de
+              rechange.
+            </p>
+          </li>
+
+          <li class="tl-item">
+            <p class="tl-date">Juin – juil. 2023</p>
+            <h4>Exploitation viticole <span class="tl-place">Jarnac (16)</span></h4>
+            <p class="tl-role">Employé saisonnier</p>
+            <p>Taille et relevage des vignes.</p>
+          </li>
+
+        </ol>
+      </div>
+
+      <div class="timeline-col">
+        <h3 class="col-title">Formation</h3>
+        <ol class="timeline">
+
+          <li class="tl-item is-current">
+            <p class="tl-date">Oct. 2026 – fév. 2027 <span class="tag">En cours</span></p>
+            <h4>University of Technology Malaysia <span class="tl-place">Johor Bahru</span></h4>
+            <p class="tl-role">Semestre d'échange, cours en anglais</p>
+            <p>
+              Cours suivis&nbsp;: Information Security, Wireless Communication
+              Systems, Data Communication &amp; Networks, PLC &amp; SCADA System
+              Design, Embedded Systems.
+            </p>
+          </li>
+
+          <li class="tl-item">
+            <p class="tl-date">Depuis sept. 2023</p>
+            <h4>IPSA <span class="tl-place">Toulouse</span></h4>
+            <p class="tl-role">Cycle ingénieur, 2<sup>e</sup> année</p>
+            <p>
+              Deux ans de prépa intégrée, puis le cycle ingénieur, en
+              télécommunications et systèmes embarqués.
+            </p>
+          </li>
+
+          <li class="tl-item">
+            <p class="tl-date">Juin 2023</p>
+            <h4>Lycée Saint-Paul <span class="tl-place">Angoulême</span></h4>
+            <p class="tl-role">Bac général, mention très bien</p>
+            <p>
+              Spécialités mathématiques et physique-chimie, option mathématiques
+              expertes.
+            </p>
+          </li>
+
+        </ol>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ====================  COMPÉTENCES  ==================== -->
+<section id="competences" class="section">
+  <div class="container">
+    <p class="section-label">Compétences</p>
+    <h2 class="section-title">Outils et <span class="grad">langues</span></h2>
+
+    <div class="skills">
+      <div class="skill-card">
+        <h3>Programmation</h3>
+        <ul class="chips chips-left">
+          <li class="chip">Python</li>
+          <li class="chip">NumPy</li>
+          <li class="chip">OpenCV</li>
+          <li class="chip">C / C++</li>
+          <li class="chip">SQL</li>
+          <li class="chip">VHDL</li>
+          <li class="chip">Arduino</li>
+          <li class="chip">VBA</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>Logiciels</h3>
+        <ul class="chips chips-left">
+          <li class="chip">CATIA V5</li>
+          <li class="chip">Altium</li>
+          <li class="chip">LaTeX</li>
+          <li class="chip">Excel</li>
+          <li class="chip">Word</li>
+          <li class="chip">PowerPoint</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>Langues</h3>
+        <ul class="lang-list">
+          <li><span>Français</span><em>langue maternelle</em></li>
+          <li><span>Anglais</span><em>B2, TOEIC 870 / 990</em></li>
+          <li><span>Italien</span><em>B1, niveau scolaire</em></li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="sub-title">En dehors des cours</h3>
+    <div class="hobbies">
+      <div class="hobby">
+        <p class="hobby-title">Aviation légère</p>
+        <p>J'ai eu ma licence de pilote (LAPL) en mai 2023 à l'aéroclub d'Angoulême.</p>
+      </div>
+      <div class="hobby">
+        <p class="hobby-title">Football</p>
+        <p>En club universitaire à Toulouse.</p>
+      </div>
+      <div class="hobby">
+        <p class="hobby-title">Course et natation</p>
+        <p>Je cours et je nage régulièrement.</p>
+      </div>
+      <div class="hobby">
+        <p class="hobby-title">Nouvelles technologies</p>
+        <p>Je m'intéresse à l'IA et à la blockchain.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ====================  PROJETS  ==================== -->
+<!-- Chaque projet est un bloc <details> : un clic sur la ligne l'ouvre.
+     name="projets" fait qu'un seul projet est ouvert à la fois.
+     Badge en haut à droite : class="project-badge is-ipsa">IPSA
+     ou class="project-badge is-perso">Perso pour un projet personnel. -->
+<section id="projets" class="section section-alt">
+  <div class="container">
+    <p class="section-label">Projets</p>
+    <h2 class="section-title">Mes <span class="grad">projets</span></h2>
+    <p class="section-intro">
+      Des projets faits en cours, en Python. Pour qu'on puisse les tester ici, les
+      démos ont été converties en JavaScript à l'aide d'un LLM, à partir de
+      notre code. Cliquez sur un projet pour l'ouvrir et l'essayer. Les calculs se
+      font sur votre machine, rien n'est envoyé sur un serveur.
+    </p>
+
+    <div class="project-list">
+    <details class="project" id="mnist" name="projets">
+      <summary class="project-sum">
+        <span class="project-num">01</span>
+        <span class="project-main">
+          <span class="project-title">Reconnaissance de chiffres manuscrits</span>
+          <span class="project-desc">Dessinez un chiffre, le modèle devine lequel.</span>
+          <ul class="chips project-tags"><li class="chip">Python</li><li class="chip">NumPy</li><li class="chip">Algèbre linéaire</li></ul>
+        </span>
+        <span class="project-badge is-ipsa" title="Projet réalisé dans le cadre de l'IPSA">IPSA</span>
+        <span class="project-chevron" aria-hidden="true"></span>
+      </summary>
+      <div class="project-body">
+        <div class="feature-text">
+          <p>
+            Pour ce projet, je n'ai pas utilisé de réseau de neurones, seulement de
+            l'algèbre linéaire. Chaque image de MNIST (28&nbsp;×&nbsp;28 pixels) est mise
+            sous forme d'un vecteur de 784 valeurs, plus un 1 pour le biais. On
+            cherche ensuite la matrice <var>W</var> qui associe le mieux chaque image
+            d'entraînement à son chiffre, au sens des moindres carrés. Elle se
+            calcule directement avec la pseudo-inverse,
+            <span class="math">W = Ẽ<sup>+</sup>B</span>, et le chiffre prédit est
+            celui qui a le plus grand score.
+          </p>
+          <p>
+            Sur les 10&nbsp;000 images de test, le modèle trouve le bon chiffre dans
+            <strong><span data-mnist-acc>86</span>&nbsp;%</strong> des cas.
+          </p>
+        </div>
+
+        <div class="demo mnist-demo">
+        <div class="mnist-pad">
+          <div class="pad-frame">
+            <canvas id="mnist-canvas" width="280" height="280"
+                    aria-label="Zone de dessin : écrivez un chiffre de 0 à 9"></canvas>
+            <p class="pad-hint" id="mnist-hint">Dessinez un chiffre ici</p>
+          </div>
+          <div class="pad-actions">
+            <button type="button" class="btn btn-ghost btn-sm" id="mnist-clear">Effacer</button>
+            <div class="model-view">
+              <canvas id="mnist-preview" width="28" height="28" aria-hidden="true"></canvas>
+              <span>Ce que voit<br>le modèle (28×28)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mnist-result">
+          <div class="pred-head">
+            <div class="pred-digit" id="mnist-pred" aria-live="polite">?</div>
+            <div>
+              <p class="pred-label">Prédiction</p>
+              <p class="pred-conf" id="mnist-conf">en attente d'un dessin</p>
+            </div>
+          </div>
+          <div class="bars" id="mnist-bars" role="img" aria-label="Probabilité estimée pour chaque chiffre"></div>
+          <p class="demo-note">
+            Avant la prédiction, le dessin est recadré, réduit à 20&nbsp;×&nbsp;20
+            pixels et centré, comme les images de MNIST. Le modèle donne des scores
+            et pas des probabilités, donc je les passe dans un softmax pour les
+            afficher en pourcentages.
+          </p>
+        </div>
+      </div>
+
+        <p class="demo-tip">
+          Le modèle a appris sur des chiffres écrits par des Américains, donc il
+          reconnaît moins bien un 7 barré ou un 1 avec un pied.
+        </p>
+      </div>
+    </details>
+
+    <details class="project" id="restauration" name="projets">
+      <summary class="project-sum">
+        <span class="project-num">02</span>
+        <span class="project-main">
+          <span class="project-title">Restauration d'image</span>
+          <span class="project-desc">Effacer un objet d'une photo en résolvant un système linéaire. BE de maths, en groupe.</span>
+          <ul class="chips project-tags"><li class="chip">Python</li><li class="chip">Gradient conjugué</li></ul>
+        </span>
+        <span class="project-badge is-ipsa" title="Projet réalisé dans le cadre de l'IPSA">IPSA</span>
+        <span class="project-chevron" aria-hidden="true"></span>
+      </summary>
+      <div class="project-body">
+        <div class="feature-text">
+          <p>
+            Projet fait en groupe pendant un BE de maths à l'IPSA. On sélectionne une
+            zone de l'image, puis on la remplit à partir des pixels qui l'entourent,
+            en cherchant le remplissage le plus lisse possible (laplacien nul). Ça
+            revient à résoudre l'équation
+            <span class="math">(L<sub>m</sub>X + XL<sub>n</sub>) ⊙ M = R</span>, qu'on
+            a résolue par la méthode du gradient conjugué, couleur par couleur.
+          </p>
+          <p>
+            Pour aller plus vite, la version optimisée ne fait le calcul que sur un
+            rectangle autour de la zone sélectionnée. C'est cette version qui tourne
+            dans la démo, convertie en JavaScript.
+          </p>
+        </div>
+
+        <div class="privacy" role="note">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+            <path d="M12 2 4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5l-8-3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            <path d="m8.5 12 2.5 2.5 4.5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <p>
+            <strong>Vos photos restent sur votre ordinateur.</strong> L'image est
+            traitée directement par votre navigateur. Elle n'est envoyée nulle part
+            et n'est pas enregistrée.
+          </p>
+        </div>
+
+        <div class="demo inpaint-demo">
+        <div class="ip-stage-wrap">
+          <div class="ip-toolbar">
+            <div class="seg" role="group" aria-label="Image source">
+              <button type="button" class="seg-btn is-active" id="ip-src-paf">Patrouille de France</button>
+              <label class="seg-btn" for="ip-file">Importer une image</label>
+              <input type="file" id="ip-file" accept="image/*" hidden>
+            </div>
+            <label class="brush">
+              <span>Pinceau</span>
+              <input type="range" id="ip-brush" min="4" max="48" value="14">
+            </label>
+          </div>
+
+          <div class="ip-stage" id="ip-stage">
+            <canvas id="ip-canvas" aria-label="Image à restaurer"></canvas>
+            <canvas id="ip-mask" aria-hidden="true"></canvas>
+            <div class="ip-drop" id="ip-drop">Déposez votre image ici</div>
+          </div>
+          <p class="ip-help" id="ip-help">
+            Peignez sur l'objet à faire disparaître en débordant un peu autour,
+            puis lancez la restauration.
+          </p>
+        </div>
+
+        <div class="ip-panel">
+          <div class="ip-col">
+          <div class="ip-row">
+            <button type="button" class="btn btn-ghost btn-sm" id="ip-example">Masque d'exemple</button>
+            <button type="button" class="btn btn-ghost btn-sm" id="ip-clear">Effacer le masque</button>
+          </div>
+
+          <div class="ip-group ip-params">
+            <label>
+              <span>Itérations max</span>
+              <select id="ip-iter">
+                <option value="100">100</option>
+                <option value="250">250</option>
+                <option value="500" selected>500</option>
+                <option value="1000">1 000</option>
+                <option value="3000">3 000</option>
+              </select>
+            </label>
+            <label>
+              <span>Tolérance ε</span>
+              <select id="ip-eps">
+                <option value="1" selected>1</option>
+                <option value="0.01">10⁻²</option>
+                <option value="0.0001">10⁻⁴</option>
+                <option value="1e-8">10⁻⁸</option>
+              </select>
+            </label>
+          </div>
+
+          <button type="button" class="btn btn-primary btn-block" id="ip-run">Lancer la restauration</button>
+          </div>
+
+          <div class="ip-col">
+          <div class="ip-stats" aria-live="polite">
+            <div><span>Itération</span><strong id="ip-it">0</strong></div>
+            <div><span>Résidu ‖d‖</span><strong id="ip-res">·</strong></div>
+            <div><span>Pixels inconnus</span><strong id="ip-px">0</strong></div>
+            <div><span>Temps de calcul</span><strong id="ip-time">·</strong></div>
+          </div>
+          <div class="ip-row">
+            <button type="button" class="btn btn-ghost btn-sm" id="ip-reset">Recommencer</button>
+            <button type="button" class="btn btn-ghost btn-sm" id="ip-download" disabled>Télécharger</button>
+          </div>
+          </div>
+
+          <div class="ip-col">
+          <div class="ip-chart">
+            <p>Convergence (log<sub>10</sub> du résidu)</p>
+            <canvas id="ip-chart" width="560" height="200" aria-hidden="true"></canvas>
+          </div>
+
+          <button type="button" class="btn btn-ghost btn-sm btn-block" id="ip-compare" disabled>Maintenir pour voir l'original</button>
+          </div>
+        </div>
+      </div>
+
+        <p class="demo-tip">
+          Le remplissage part du noir et se propage depuis les bords à chaque
+          itération. Ça marche bien sur un ciel ou un mur, beaucoup moins sur des
+          textures compliquées, puisque la méthode ne fait que lisser.
+        </p>
+      </div>
+    </details>
+
+    <details class="project" id="pouls" name="projets">
+      <summary class="project-sum">
+        <span class="project-num">03</span>
+        <span class="project-main">
+          <span class="project-title">Mesure du pouls par webcam</span>
+          <span class="project-desc">Retrouver le rythme cardiaque à partir de la couleur du visage. BE de traitement du signal, en groupe.</span>
+          <ul class="chips project-tags"><li class="chip">Python</li><li class="chip">Traitement du signal</li><li class="chip">FFT</li></ul>
+        </span>
+        <span class="project-badge is-ipsa" title="Projet réalisé dans le cadre de l'IPSA">IPSA</span>
+        <span class="project-chevron" aria-hidden="true"></span>
+      </summary>
+      <div class="project-body">
+        <div class="feature-text">
+          <p>
+            Autre BE fait en groupe, cette fois en traitement du signal. À chaque
+            battement de cœur, la quantité de sang dans la peau change un peu, et la
+            couleur du visage aussi. Ça ne se voit pas à l'œil nu, mais une webcam
+            peut le capter. On utilise le canal vert parce que l'hémoglobine absorbe
+            surtout cette couleur. C'est aussi pour ça que les montres de sport
+            mesurent le pouls avec des LED vertes.
+          </p>
+          <p>
+            Pour chaque image, on calcule la moyenne du vert sur le front. On fait
+            ensuite un seuillage spectral pour enlever le bruit, puis un filtre
+            passe-bande pour ne garder que les fréquences entre 60 et 180 battements
+            par minute. L'autocorrélation donne enfin la période du signal, et donc
+            le BPM.
+          </p>
+          <p class="feature-aside">
+            Deux différences avec le BE&nbsp;: le visage n'est pas détecté
+            automatiquement (il faut le placer dans le cadre), et la variation lente
+            de la lumière est retirée avant le calcul. Sans ça, le seuillage
+            effaçait tout le signal avec la plupart des webcams.
+          </p>
+        </div>
+
+        <div class="privacy" role="note">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+            <path d="M12 2 4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5l-8-3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            <path d="m8.5 12 2.5 2.5 4.5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <p>
+            <strong>Les images de la caméra restent sur votre ordinateur.</strong>
+            La vidéo est analysée par votre navigateur et n'est jamais envoyée sur un
+            serveur. Aucune image n'est enregistrée, seule la moyenne du vert est
+            gardée le temps du calcul. La caméra s'allume quand vous cliquez et se
+            coupe à la fin de la mesure.
+          </p>
+        </div>
+
+        <div class="demo bpm-demo">
+        <div class="bpm-stage-wrap">
+          <div class="bpm-stage" id="bpm-stage">
+            <canvas id="bpm-video" width="640" height="480" aria-label="Image de la caméra avec le cadre guide"></canvas>
+            <div class="bpm-off" id="bpm-off">
+              <p>Caméra éteinte</p>
+              <button type="button" class="btn btn-primary btn-sm" id="bpm-cam">Activer la caméra</button>
+            </div>
+          </div>
+          <div class="bpm-progress" aria-hidden="true"><span id="bpm-bar"></span></div>
+          <p class="ip-help" id="bpm-help">
+            Placez votre visage dans le cadre, front dégagé, face à une fenêtre.
+            Pendant la mesure, ne bougez pas et ne parlez pas.
+          </p>
+        </div>
+
+        <div class="bpm-panel">
+          <div class="bpm-result">
+            <div class="bpm-value"><strong id="bpm-value">··</strong><span>BPM</span></div>
+            <p class="bpm-method">par autocorrélation, comme dans le BE</p>
+            <div class="opt opt-inline">
+              <p class="bpm-quality" id="bpm-quality">aucune mesure</p>
+              <button type="button" class="tip" aria-label="Comment est jugée la qualité du signal ?" aria-describedby="tip-qualite">?</button>
+              <p class="tip-text" id="tip-qualite" role="tooltip">
+                Indique si le pic du pouls ressort bien par rapport au bruit. Si le
+                signal est faible, le résultat est à prendre avec précaution
+                (mouvement, mauvaise lumière…).
+                  </p>
+            </div>
+          </div>
+
+          <div class="ip-params">
+            <label>
+              <span>Durée</span>
+              <select id="bpm-duree">
+                <option value="20">20 s</option>
+                <option value="30" selected>30 s</option>
+                <option value="40">40 s</option>
+              </select>
+            </label>
+            <label>
+              <span>Caméra</span>
+              <button type="button" class="btn btn-ghost btn-sm" id="bpm-stop" disabled>Couper</button>
+            </label>
+          </div>
+
+          <button type="button" class="btn btn-primary btn-block" id="bpm-run" disabled>Lancer la mesure</button>
+
+          <div class="ip-chart">
+            <p id="bpm-titre-signal">Vert moyen du front (signal brut, 10 dernières s)</p>
+            <canvas id="bpm-signal" width="560" height="150" aria-hidden="true"></canvas>
+          </div>
+          <div class="ip-chart">
+            <p id="bpm-titre-spectre">Autocorrélation (axe en BPM, un point par décalage d'une image)</p>
+            <canvas id="bpm-spectre" width="560" height="150" aria-hidden="true"></canvas>
+          </div>
+        </div>
+      </div>
+
+        <div class="bpm-tips">
+          <p class="bpm-tips-title">Pour une mesure fiable</p>
+          <ul>
+            <li>
+              <strong>Mettez-vous à la lumière du jour plutôt que sous une lampe.</strong>
+              Les lampes scintillent 100 fois par seconde. On ne le voit pas, mais la
+              caméra si, et ça peut fausser le calcul.
+            </li>
+            <li><strong>Ne bougez pas</strong> et évitez de parler pendant la mesure.</li>
+            <li><strong>Dégagez votre front</strong> pour que la zone verte ne contienne que de la peau.</li>
+          </ul>
+          <p class="bpm-tips-foot">
+            Vous pouvez prendre votre pouls au poignet en même temps pour comparer.
+            Ce n'est évidemment pas un appareil médical.
+          </p>
+        </div>
+      </div>
+    </details>
+
+    <details class="project" id="classification" name="projets">
+      <summary class="project-sum">
+        <span class="project-num">04</span>
+        <span class="project-main">
+          <span class="project-title">Détection de spams</span>
+          <span class="project-desc">Trois algorithmes de classification comparés sur des SMS. Projet en binôme.</span>
+          <ul class="chips project-tags"><li class="chip">Python</li><li class="chip">KNN</li><li class="chip">Naive Bayes</li><li class="chip">LDA</li></ul>
+        </span>
+        <span class="project-badge is-ipsa" title="Projet réalisé dans le cadre de l'IPSA">IPSA</span>
+        <span class="project-chevron" aria-hidden="true"></span>
+      </summary>
+      <div class="project-body">
+        <div class="feature-text">
+          <p>
+            Projet d'IA fait en binôme. Le but était de classer 5&nbsp;572 SMS en spam
+            ou non spam. Chaque message est transformé en un vecteur qui compte le
+            nombre d'apparitions de chaque mot, puis on applique trois algorithmes
+            qu'on a codés nous-mêmes en Python&nbsp;: KNN, Naive Bayes et LDA.
+          </p>
+          <p>
+            Les modèles sont entraînés sur 80&nbsp;% des messages, et les précisions
+            affichées sont celles obtenues sur les 20&nbsp;% restants. Vous pouvez
+            écrire votre propre message (en anglais) pour voir ce qu'en pense chaque
+            algorithme.
+          </p>
+        </div>
+
+        <div class="demo" id="tab-spam">
+        <div class="spam-grid">
+          <div>
+            <label class="spam-label" for="spam-input">Tapez ou collez un SMS (en anglais, comme la base d'entraînement)</label>
+            <textarea id="spam-input" rows="4" spellcheck="false" placeholder="Ex. : Congratulations! You won a free cruise, call now to claim your prize"></textarea>
+            <div class="spam-examples">
+              <span>Exemples&nbsp;:</span>
+              <button type="button" class="chip-btn" data-ex="WINNER!! You have been selected to receive a £900 prize reward! To claim call 09061701461. Valid 12 hours only.">spam classique</button>
+              <button type="button" class="chip-btn" data-ex="Hey, are we still meeting for lunch tomorrow? I'll call you when I leave work">message normal</button>
+              <button type="button" class="chip-btn" data-ex="Call me now, I have free time tonight">piège</button>
+              <button type="button" class="chip-btn" data-ex="Claim your free gift now, text WIN to 80086">désaccord</button>
+            </div>
+            <p class="spam-privacy">Ce que vous tapez est analysé dans votre navigateur et n'est envoyé nulle part.</p>
+
+            <div class="spam-words" aria-live="polite">
+              <p class="spam-words-title">
+                Comment la LDA lit votre message
+                <span class="opt opt-inline opt-tip-only">
+                  <button type="button" class="tip" aria-label="Que signifient les couleurs ?" aria-describedby="tip-mots">?</button>
+                  <span class="tip-text" id="tip-mots" role="tooltip">
+                    Les mots sont colorés selon leur poids dans la LDA&nbsp;: rouge s'ils
+                    font pencher vers spam, vert vers message normal. Les mots barrés
+                    ne sont pas dans la base de données, ils sont ignorés.
+                  </span>
+                </span>
+              </p>
+              <p class="spam-words-text" id="spam-words"><span class="faint">Les mots de votre message apparaîtront ici.</span></p>
+            </div>
+          </div>
+
+          <div class="algo-cards">
+            <div class="algo-card" id="card-knn">
+              <div class="algo-head">
+                <p class="algo-name">KNN</p>
+                <span class="opt opt-inline opt-tip-only">
+                  <button type="button" class="tip" aria-label="Qu'est-ce que le KNN ?" aria-describedby="tip-knn">?</button>
+                  <span class="tip-text" id="tip-knn" role="tooltip">
+                    Le KNN cherche dans la base les k messages les plus proches du
+                    vôtre et regarde ce qu'ils sont en majorité. p change la façon de
+                    calculer la distance entre deux messages (p&nbsp;=&nbsp;2 pour la
+                    distance classique).
+                  </span>
+                </span>
+                <span class="verdict" id="v-knn">·</span>
+              </div>
+              <p class="algo-detail" id="d-knn">&nbsp;</p>
+              <div class="algo-params">
+                <label>k <select id="knn-k"><option>1</option><option selected>3</option><option>5</option><option>7</option></select></label>
+                <label>p <select id="knn-p"><option>1</option><option selected>2</option><option>3</option></select></label>
+              </div>
+              <p class="algo-acc" id="a-knn"></p>
+            </div>
+
+            <div class="algo-card" id="card-nb">
+              <div class="algo-head">
+                <p class="algo-name">Naive Bayes</p>
+                <span class="opt opt-inline opt-tip-only">
+                  <button type="button" class="tip" aria-label="Qu'est-ce que Naive Bayes ?" aria-describedby="tip-nb">?</button>
+                  <span class="tip-text" id="tip-nb" role="tooltip">
+                    Pour chaque mot, Naive Bayes regarde s'il apparaît plutôt dans les
+                    spams ou dans les messages normaux, en traitant les mots
+                    indépendamment les uns des autres. Le biais est une petite valeur
+                    ajoutée pour éviter une division par zéro. Avec 10⁻³ au lieu de
+                    10⁻¹⁵, la précision passe de 90,7&nbsp;% à 98,7&nbsp;%.
+                  </span>
+                </span>
+                <span class="verdict" id="v-nb">·</span>
+              </div>
+              <p class="algo-detail" id="d-nb">&nbsp;</p>
+              <div class="algo-params">
+                <label>biais <select id="nb-eps"><option value="1e-15" selected>10⁻¹⁵ (rapport)</option><option value="1e-3">10⁻³</option></select></label>
+              </div>
+              <p class="algo-acc" id="a-nb"></p>
+            </div>
+
+            <div class="algo-card" id="card-lda">
+              <div class="algo-head">
+                <p class="algo-name">LDA</p>
+                <span class="opt opt-inline opt-tip-only">
+                  <button type="button" class="tip" aria-label="Qu'est-ce que la LDA ?" aria-describedby="tip-lda">?</button>
+                  <span class="tip-text" id="tip-lda" role="tooltip">
+                    Même principe que Naive Bayes, mais la LDA tient compte des liens
+                    entre les mots. Il faut normalement une matrice de 8&nbsp;713 × 8&nbsp;713
+                    valeurs, trop lourde pour un site. Avec deux classes, on peut la
+                    remplacer par un poids par mot calculé à l'avance.
+                  </span>
+                </span>
+                <span class="verdict" id="v-lda">·</span>
+              </div>
+              <p class="algo-detail" id="d-lda">&nbsp;</p>
+              <p class="algo-acc" id="a-lda"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </details>
+    </div>
+  </div>
+</section>
+
+
+<!-- ====================  CONTACT  ==================== -->
+<section id="contact" class="section contact">
+  <div class="container">
+    <p class="section-label">Contact</p>
+    <h2 class="section-title">Me <span class="grad">contacter</span></h2>
+    <p class="section-intro">
+      Pour une question sur un projet ou autre chose, le plus simple est de
+      m'écrire par mail.
+    </p>
+
+    <!-- MODIFIE : l'adresse apparaît deux fois sur la ligne suivante -->
+    <a class="mail-link" href="mailto:noa.scorcione@ipsa.fr">noa.scorcione@ipsa.fr</a>
+
+    <div class="socials">
+      <a href="mailto:noa.scorcione@ipsa.fr">E-mail</a>
+      <a href="https://www.linkedin.com/in/noa-scorcione-29620334b" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="cv.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+      <!-- MODIFIE : décommente et complète si tu veux ajouter ton GitHub
+      <a href="https://github.com/ton-compte">GitHub</a>
+      -->
+    </div>
+  </div>
+</section>
+
+</main>
+
+
+<footer class="footer">
+  <div class="container">
+    <p>© 2026 Noa Scorcione</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script src="js/mnist-weights.js"></script>
+<script src="js/mnist.js"></script>
+<script src="js/paf-image.js"></script>
+<script src="js/inpaint.js"></script>
+<script src="js/bpm-core.js"></script>
+<script src="js/bpm.js"></script>
+<script src="js/ia-data.js"></script>
+<script src="js/ia-core.js"></script>
+<script src="js/ia.js"></script>
+</body>
+</html>
